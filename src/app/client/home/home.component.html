@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Portal APP</span>
+    </mat-toolbar-row>
+</mat-toolbar>  
+<div class="container">
+    <div class="cards">
+        <app-portal-card *ngFor="let card of homeService.data"
+         [testimonialID]="card.testimonialID"  [userName]="card.userName" [descriptiontext]="card.descriptiontext"
+         [img]="card.img"
+           (goProfile)="goToProfile()" >
+
+        </app-portal-card>
+     
+<!-- type='{{card.type}}' -->
+
+        <!-- <h1>{{updatevalue}}</h1> -->
+      
+    </div>
+<h1>{{homeService.message}}</h1>
+</div>
+
+  

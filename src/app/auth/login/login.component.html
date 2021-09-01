@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <nav>
+      <div class="nav">
+        <a (click)="Home" >Home</a>
+        <a (click)="Contact()">Contact</a>
+        <a (click)="AboutUs()" >About</a>
+        <a (click)="Login()" >Login</a>
+        <a (click)="Register()">Register</a>
+      </div>
+        </nav>
+       
+
+
+<h1 style="text-align: center;margin-top: 9%;">* Login *</h1>
+<div class="con">  
+  <div class="loginCard">
+    <div class="example-container">
+            <mat-form-field appearance="fill"class="example-full-width">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" [formControl]="auth.email">
+              <mat-error *ngIf="auth.email.hasError('required')">
+                 please enter email
+              </mat-error>
+              <mat-error *ngIf="auth.email.hasError('email')">
+                Enter valid Email
+              </mat-error>
+            </mat-form-field>
+            <!-- ******************************************** -->
+            <mat-form-field appearance="fill" class="example-full-width">
+                <mat-label>Enter your Password</mat-label>
+                <input type ="password" matInput placeholder="pat@example.com" [formControl]="auth.password" value="password">
+                <mat-error *ngIf="auth.password.hasError('required')&& !auth.password.hasError('minlength')">
+                   please enter Password
+                </mat-error>
+                <mat-error *ngIf="auth.password.hasError('minlength')">
+                  Enter strong password 
+                </mat-error>
+                <ng-container>
+
+                </ng-container>
+              </mat-form-field>
+              <section class="example-section">
+                <mat-checkbox class="example-margin" [(ngModel)]="auth.checked" (click)="RememberFun()">Remember me</mat-checkbox>
+              </section>
+              <button [disabled]="!auth.email.valid || !auth.password.valid" mat-button color="primary" (click)="submit()" style="flex:1;width:100%;margin-top:50px ;">
+
+                <ng-container>Login</ng-container>  </button>
+
+       
+        <p (click)="gotToRegister()"><span style="color:brown">Register..</span></p>
+        
+          </div>
+    </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        
+        <p class="text-justify">Partnering with us means changing peoples’ lives by supporting them in fostering their livelihood strategies and bringing prosperity to rural areas. Sustainable and diverse coffee landscapes are indispensable for mutually beneficial supply chains, dignified living conditions, and the future supply of coffee. It requires the combination of skills, experiences, resources, and authority to enable lasting improvement.</p>
+      </div>
+
+      
+    </div>
+  </div>
+</footer>
